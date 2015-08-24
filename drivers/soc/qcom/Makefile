@@ -67,6 +67,7 @@ endif
 obj-$(CONFIG_MSM_SYSMON_COMM) += sysmon.o sysmon-qmi.o
 obj-$(CONFIG_CP_ACCESS64) += cpaccess64.o
 obj-$(CONFIG_MSM_CPU_PWR_CTL) += cpu_pwr_ctl.o
+obj-$(CONFIG_MSM_HOTPLUG) += msm_hotplug.o
 obj-$(CONFIG_MSM8994_V1_PMUIRQ_WA) += cti-pmu-irq.o
 obj-$(CONFIG_MSM_XPU_ERR_FATAL) += scm-xpu.o
 
@@ -81,3 +82,5 @@ obj-$(CONFIG_MSM_RTB) += msm_rtb-hotplug.o
 obj-$(CONFIG_QCOM_EARLY_RANDOM)	+= early_random.o
 obj-$(CONFIG_MSM_PACMAN)        += msm_pacman.o
 obj-$(CONFIG_STATE_NOTIFIER)		+= state_notifier.o
+
+
