@@ -189,6 +189,7 @@ config FIX_EARLYCON_MEM
 
 source "init/Kconfig"
 
+
 source "kernel/Kconfig.freezer"
 
 menu "Platform selection"

@@ -858,7 +858,7 @@ deps_config := \
 include/config/auto.conf: \
 	$(deps_config)
 
-ifneq "$(KERNELVERSION)" "3.10.108-Poison-Reborn-v2.0"
+ifneq "$(KERNELVERSION)" "3.10.108-Poison-Rebased-v4.0"
 include/config/auto.conf: FORCE
 endif
 ifneq "$(ARCH)" "arm64"

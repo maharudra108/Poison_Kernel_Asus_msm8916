@@ -9,25 +9,24 @@ red='\033[0;31m'
 nocol='\033[0m'
 
 # Kernel details
-KERNEL_NAME="Poison_Reborn"
-VERSION="v2.0"
+KERNEL_NAME="Poison_Rebased"
+VERSION="v4.0"
 DATE=$(date +"%d-%m-%Y-%I-%M")
 DEVICE="Z00T"
 FINAL_ZIP=$KERNEL_NAME-$VERSION-$DATE-$DEVICE.zip
 defconfig=Z00T_defconfig
 
 # Dirs
-KERNEL_DIR=~/poison/msm8916
+KERNEL_DIR=~/v3.0/msm8916
 ANYKERNEL_DIR=$KERNEL_DIR/AnyKernel2
-RAMDISK=$KERNEL_DIR/ramdisk/*
 KERNEL_IMG=$KERNEL_DIR/arch/arm64/boot/Image
 DT_IMAGE=$KERNEL_DIR/arch/arm64/boot/dt.img
-UPLOAD_DIR=~/poison/$DEVICE
+UPLOAD_DIR=~/v3.0/$DEVICE
 DTBTOOL=$KERNEL_DIR/tools/dtbToolCM
 
 # Export
 export ARCH=arm64
-export CROSS_COMPILE=/home/riad/poison/aarch64-linux-android-4.9-uber-master/bin/aarch64-linux-android-
+export CROSS_COMPILE=/home/riad/v3.0/aarch64-linux-android-4.9-linaro/bin/aarch64-linux-android-
 
 
 ## Functions ##
@@ -57,7 +56,6 @@ $DTBTOOL -2 -o $DT_IMAGE -s 2048 -p $KERNEL_DIR/scripts/dtc/ $KERNEL_DIR/arch/ar
 # Making zip
 function make_zip() {
 cp $KERNEL_IMG $ANYKERNEL_DIR
-cp $RAMDISK    $ANYKERNEL_DIR
 cp $DT_IMAGE $ANYKERNEL_DIR
 mkdir -p $UPLOAD_DIR
 cd $ANYKERNEL_DIR
