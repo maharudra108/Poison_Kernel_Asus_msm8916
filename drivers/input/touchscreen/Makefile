@@ -3,6 +3,7 @@
 #
 
 # Each configuration option enables a list of files.
+ftxxxx-objs += ftxxxx_ts.o ftxxxx_ex_fun.o focaltech_ctl.o ini.o test_lib.o
 ifeq ($(CONFIG_MACH_ASUS_Z00L),y)
 EXTRA_CFLAGS	+= -DZE550KL_HD
 EXTRA_CFLAGS	+= -DZE600KL_HD
@@ -82,7 +83,7 @@ obj-$(CONFIG_TOUCHSCREEN_WM97XX_MAINSTONE)	+= mainstone-wm97xx.o
 obj-$(CONFIG_TOUCHSCREEN_WM97XX_ZYLONITE)	+= zylonite-wm97xx.o
 obj-$(CONFIG_TOUCHSCREEN_W90X900)	+= w90p910_ts.o
 obj-$(CONFIG_TOUCHSCREEN_TPS6507X)	+= tps6507x-ts.o
-#obj-$(CONFIG_TOUCHSCREEN_FT5X06)	+= ft5x06_ts.o
+obj-$(CONFIG_TOUCHSCREEN_FT5X06)	+= ft5x06_ts.o
 obj-y += ftxxxx.o 
 ftxxxx-objs += ftxxxx_ts.o ftxxxx_ex_fun.o focaltech_ctl.o ini.o test_lib.o
 obj-$(CONFIG_TOUCHSCREEN_SYNAPTICS_DSX_RMI4_DEV)	+= synaptics_rmi_dev.o
@@ -92,3 +93,6 @@ obj-$(CONFIG_TOUCHSCREEN_GT9XX)		+= gt9xx/
 obj-$(CONFIG_TOUCHSCREEN_BU21150)	+= bu21150.o
 obj-$(CONFIG_INPUT_MT_WRAPPER)		+= input_mt_wrapper.o
 obj-$(CONFIG_TOUCHSCREEN_IT7260_I2C)    += it7258_ts_i2c.o
+obj-$(CONFIG_TOUCHSCREEN_FT5X46) += ftxxxx.o
+#ASUS_BSP Freeman +++
+obj-$(CONFIG_TOUCHSCREEN_FT5X46_ZC550KL)	+= Focal_ZC550KL/
